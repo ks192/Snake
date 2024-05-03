@@ -10,13 +10,13 @@ import java.util.Random;
 
 public class GamePanel extends JPanel implements KeyListener , ActionListener {
     private int length;
-    private int[] snakeX = new int[40], snakeY = new int[40];
+    private final int[] snakeX = new int[40];
+    private final int[] snakeY = new int[40];
     private String ori;
     private boolean isStart, isFail = false;
     private int foodX;
     private int foodY;
-    private Random random = new Random();
-    private Timer timer = new Timer(100, this::actionPerformed);
+    private final Random random = new Random();
     private int score;
 
 
@@ -24,6 +24,7 @@ public class GamePanel extends JPanel implements KeyListener , ActionListener {
         init();
         this.setFocusable(true);
         this.addKeyListener(this);
+        Timer timer = new Timer(100, this::actionPerformed);
         timer.start();
     }
 

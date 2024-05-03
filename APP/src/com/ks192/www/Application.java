@@ -11,7 +11,7 @@ public class Application {
 class GameStart extends JFrame{
     public GameStart()  {
         this.setBounds(580 ,120,900,800);
-        this.add(new GamePanel());
+        this.getContentPane().add(new GamePanel());
 
         this.setVisible(true);
         this.setResizable(false);
